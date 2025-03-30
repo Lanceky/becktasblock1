@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bektas Blocks | Products</title>
+  <meta name="description" content="Explore our range of concrete blocks and related products.">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" 
+    integrity="sha512-Fo3rlrZj/k7ujTnHg4C+6I6b4z8n7/YX9/E6R9vUVuE0Q2Lch7RjKXNtC9f+YbUXM7yT+g4n+ef+W4ePyZAlFw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ================================
+       Header & Top Bar Styles
+    ================================ */
+    .top-bar {
+      background: #09d8e7d0;
+      padding: 5px 0;
+      font-size: 20px;
+    }
+    
+    .top-bar .container {
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+    .top-bar .contact-info span {
+      margin-left: 20px;
+      color: #555;
+    }
+    
+    .contact-info span {
+      margin-right: 15px;
+      font-size: 0.9em;
+    }
+    
+    .site-header {
+      background: #ecf0f0;;
+      border-bottom: 1px solid  #ecf0f0;;
+    }
+    
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      position: relative;
+    }
+    
+    .site-header img {
+      max-height: 100px;
+    }
+    
+    .site-header div.logo-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+    
+    .site-header div.logo-title img {
+      width: 250px;
+      height: 200px;
+      border-radius: 5px;
+    }
+    
+    .site-header div.logo-title h1 {
+      font-size: 3em;
+      margin-left: 20px;
+      color: #0965f0;
+    }
+    
+    .site-header img.flag {
+      width: 100px;
+      height: auto;
+      position: absolute;
+      top: 10px;
+    }
+    
+    .site-header img.flag.left {
+      left: -180px;
+    }
+    
+    .site-header img.flag.right {
+      right: -180px;
+    }
+    
+    .site-nav ul li a {
+      text-decoration: none;
+      color: #f20707;
+      font-weight: 700;
+    }
+    
+    .site-nav ul li a.active {
+      color: rgb(255, 98, 0);
+    }
+    
+    /* ================================
+       Static Background Section
+    ================================ */
+    .static-bg-section {
+      background-image: url('images/Corn-Based-Concrete-Building-the-Future-of-Low-Carbon-Construction-Materials.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+    }
+    
+    .static-bg-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ecf0f0;
+      z-index: -1;
+    }
+    
+    .static-bg-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .static-bg-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    
+    .static-bg-content p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    
+    /* ================================
+       Product Grid & Modal Styles
+    ================================ */
+    h1 {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 2.5rem;
+      color: #333;
+    }
+    
+    .image-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto 40px;
+    }
+    
+    .item {
+      text-align: center;
+    }
+    
+    /* Original product grid image styling (will be overridden by uniform rules below) */
+    .item img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    
+    .item img:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background: rgba(0,0,0,0.8);
+    }
+    
+    .modal:target {
+      display: block;
+    }
+    
+    .modal-content {
+      background: #fff;
+      margin: 5% auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 800px;
+      border-radius: 8px;
+      position: relative;
+    }
+    
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      text-decoration: none;
+      font-size: 2em;
+      color: #333;
+    }
+    
+    .modal-images {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .modal-image {
+      flex: 1 1 45%;
+      text-align: center;
+    }
+    
+    /* Original modal image styling (will be overridden by uniform rules below) */
+    .modal-image img {
+      width: 100%;
+      border-radius: 5px;
+    }
+    
+    .specs {
+      margin-top: 10px;
+      background: #f9f9f9;
+      padding: 10px;
+      font-size: 24px;
+      border-radius: 5px;
+      text-align: left;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    
+    .specs p {
+      margin: 5px 0;
+    }
+    
+    .related {
+      margin-top: 20px;
+    }
+    
+    .related h3 {
+      margin-bottom: 10px;
+    }
+    
+    .related-images {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    
+    .related-item {
+      text-align: center;
+      text-decoration: none;
+      color: #333;
+    }
+    
+    .related-item img {
+      width: 100px;
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+    }
+    
+    .related-item img:hover {
+      transform: scale(1.05);
+    }
+    
+    /* ================================
+       Footer Styles
+    ================================ */
+    
+    
+    
+    /* ================================
+       Uniform Image Styles
+       (Overrides previous image styles in the grid & modals)
+    ================================ */
+    
+    .image-container .item img {
+      width: 100%;
+      max-width: 300px; /* Keeps images from growing too large */
+      aspect-ratio: 1 / 1; /* Enforces a square shape */
+      object-fit: cover; /* Crops the image uniformly */
+      border-radius: 10px; /* Consistent rounded corners */
+    }
+    
+    .modal-images .modal-image img {
+      width: 100%;
+      aspect-ratio: 1 / 1; /* Ensures the same square shape as grid images */
+      object-fit: cover; /* Makes sure images fill their container */
+      border-radius: 10px; /* Uniform rounded corners */
+    }
+    /* ===================== Responsive CSS Inserted ===================== */
+@media (max-width: 768px) {
+  /* Header adjustments */
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  .header-container img {
+    position: static !important;
+    margin: 10px 0;
+  }
+  .header-container h1 {
+    position: static;
+    text-align: center;
+    font-size: 2em;
+    margin: 10px 0;
+  }
+  /* Navigation adjustments */
+  .site-nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  .site-nav ul li {
+    margin: 5px 0;
+  }
+  /* Stats Bar adjustments */
+  .stats-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .stats-container .stat {
+    margin: 10px 0;
+  }
+  /* Professional Details: Stack cards vertically */
+  .professional-details .details-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .professional-details .card {
+    margin: 10px 0;
+    width: 90%;
+  }
+  /* Vision & Mission: Stack columns */
+  .vision-mission .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .vision, .mission {
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+  }
+  /* Latest News: Stack blog posts vertically */
+  section[style*="padding: 20px; background-color: #f9f9f9;"] > div[style*="display: flex"] {
+    flex-direction: column;
+    align-items: center;
+  }
+  /* Client Boxes: Adjust layout */
+  #client-boxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .client-box {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+  /* Request a Quote: Stack form and info vertically */
+  .quote-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .quote-form, .quote-info {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  /* Footer: Center text */
+  .site-footer .container {
+    text-align: center;
+    padding: 20px;
+  }
+}
+/* ===================== End Responsive CSS ===================== */
+
+  </style>
+</head>
+<body>
+  <!-- Top Bar with Contact Info -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="contact-info">
+        <span class="phone">0704030882 or 0713900030</span>
+        <span class="email">bektasblocks@gmail.com</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header: Logo and Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <img src="images/kenyan.png" alt="Turkey Flag" class="flag left">
+      <div style="display: flex; align-items: center; gap: 5px;">
+        <img src="images/1c50f433-3729-44ea-89d7-d629d281f4a7.jpg" alt="Bektas Blocks Logo" style="width: 270px; height: 170px; position: relative; left: 39%; border-radius: 5px;">
+        <h1 style="font-size: 3em; position: relative; left: 40%; margin: 0; color: #0965f0;">BEKTAS BLOCKS</h1>
+      </div>
+      <img src="images/turkish.jpeg" alt="Kenyan Flag" class="flag right">
+    </div>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html" class="active">HOME</a></li>
+        <li><a href="products.html">PRODUCTS</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="contacts.html">CONTACT</a></li>
+        <li><a href="reviews.html">REVIEWS</a></li>
+        <li><a href="staff.html">ABOUT US</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Stats Bar -->
+<section class="stats-bar">
+  <div class="container stats-container">
+    <div class="stat">
+      <span class="number">587</span>
+      <span class="label">CLIENTS</span>
+    </div>
+    <div class="stat">
+      <span class="number">30</span>
+      <span class="label">EMPLOYEES</span>
+    </div>
+    <div class="stat">
+      <span class="number">2</span>
+      <span class="label">AWARDS</span>
+    </div>
+    <div class="stat">
+      <span class="number">20</span>
+      <span class="label">PRODUCTS</span>
+    </div>
+  </div>
+</section>
+
+<!-- Inline JavaScript to animate numbers -->
+<script>
+  // Function to animate a number from start to end over 'duration' milliseconds
+  function animateValue(obj, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      obj.innerText = Math.floor(progress * (end - start) + start);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+
+  // Once the window loads, animate each stat number from 0 to its final value
+  window.addEventListener('load', () => {
+    const numbers = document.querySelectorAll('.stat .number');
+    numbers.forEach((numElement) => {
+      const finalValue = parseInt(numElement.innerText, 10);
+      animateValue(numElement, 0, finalValue, 2000); // Animate over 2000ms
+    });
+  });
+</script>
+
+ 
+
+  <!-- Static Background Section -->
+  <section class="static-bg-section">
+    <div class="static-bg-content">
+      <h2>Welcome to Bektas Products</h2>
+      <p>Discover quality concrete and precast building materials for your projects.</p>
+    </div>
+  </section>
+
+  <!-- Product Grid -->
+  <h1>Our Products</h1>
+  <div class="image-container">
+    <!-- 1. Interlocking Blocks (Hollow) -->
+    <div class="item">
+      <a href="#modal-interlocking-blocks-hollow">
+        <img src="https://i.pinimg.com/474x/46/02/fb/4602fb48129167bc380a68c1958dbd8c.jpg" alt="Interlocking Blocks (Hollow)">
+      </a>
+      <p>Interlocking Blocks (Hollow)</p>
+    </div>
+     <!-- 2. Interlocking solid concrete blocks -->
+     <div class="item">
+      <a href="#modal-interlocking-solid-concrete-blocks">
+        <img src="images/3bp-removebg-preview.png" alt="Interlocking solid concrete blocks">
+      </a>
+      <p>Interlocking solid concrete blocks</p>
+    </div>
+    <!-- 3 Hollow Pot -->
+    <div class="item">
+      <a href="#modal-hollow-pot">
+        <img src="images/2k-removebg-preview.png" alt="Hollow Pot">
+      </a>
+      <p>Hollow Pot</p>
+    </div>
+    
+    <!-- 4. Kerbstone -->
+    <div class="item">
+      <a href="#modal-kerbstone">
+        <img src="images/pavementslab2.jpg" alt="Kerbstone">
+      </a>
+      <p>Kerbstone</p>
+    </div>
+    <!-- 5. Channels -->
+    <div class="item">
+      <a href="#modal-channels">
+        <img src="images/chanels111.png" alt="Channels">
+      </a>
+      <p>Channels</p>
+    </div>
+    <!-- 6. Quad -->
+    <div class="item">
+      <a href="#modal-quad">
+        <img src="images/quad2.jpg" alt="Quad">
+      </a>
+      <p>Quad</p>
+    </div>
+    <!-- 6. Camel Foot -->
+    <div class="item">
+      <a href="#modal-camel-foot">
+        <img src="images/camelffotstone1.jpg" alt="Camel Foot">
+      </a>
+      <p>Camel Foot</p>
+    </div>
+    <!-- 7. Lovestone -->
+    <div class="item">
+      <a href="#modal-lovestone">
+        <img src="images/1b-removebg-preview.png" alt="Lovestone">
+      </a>
+      <p>Lovestone</p>
+    </div>
+    <!-- 8. Uni -->
+    <div class="item">
+      <a href="#modal-uni">
+        <img src="images/991.jpeg" alt="Uni">
+      </a>
+      <p>Uni</p>
+    </div>
+    <!-- 9. Uni-colored -->
+    <div class="item">
+      <a href="#modal-uni-colored">
+        <img src="data:image/jpeg;base64,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" alt="Uni-colored">
+      </a>
+      <p>Uni-colored</p>
+    </div>
+  </div>
+
+  <!-- ===========================
+       Product Detail Modals
+  =========================== -->
+
+  <!-- 1. Interlocking solid concrete blocks Modal -->
+  <div id="modal-interlocking-solid-concrete-blocks" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <h2>Interlocking solid concrete blocks</h2>
+      <div class="modal-images">
+        <div class="modal-image">
+          <img src="images/3bp-removebg-preview.png" alt="Interlocking solid concrete blocks - Image 1">
+          <div class="specs">
+            <p><strong>SIZE:</strong> 100 x 190 x 380 (4")</p>
+            <p><strong>Weight:</strong> 14.5kg</p>
+          </div>
+        </div>
+       
+        <div class="modal-image">
+          <img src="images/2p-removebg-preview.png " alt="Interlocking solid concrete blocks - Image 2">
+          <div class="specs">
+            <p><strong>SIZE:</strong> 150 x 190 x 380 (6")</p>
+            <p><strong>Weight:</strong> 22kg</p>
+          </div>
+          <div class="modal-image">
+            <img src="images/IMG20250225112906-removebg-preview (1).png" alt="Interlocking solid concrete blocks - Image 2">
+            <div class="specs">
+              <p><strong>SIZE:</strong> 200 x 190 x 380  (9")</p>
+            <p><strong>Weight:</strong> 29kg</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Interlocking Blocks (Hollow) Modal -->
+  <div id="modal-interlocking-blocks-hollow" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <h2>Interlocking Blocks (Hollow)</h2>
+      <div class="modal-images">
+        <div class="modal-image">
+          <img src="images/interl-removebg-preview.png" alt="Interlocking Blocks (Hollow) - Image 1">
+          <div class="specs">
+            <p><strong>SIZE:</strong> 100 x 190 x 380 (4")</p>
+            <p><strong>Weight:</strong> 11kg</p>
+          </div>
+        </div>
+        <div class="modal-image">
+          <img src="https://i.pinimg.com/474x/46/02/fb/4602fb48129167bc380a68c1958dbd8c.jpg" alt="Interlocking Blocks (Hollow) - Image 2">
+          <div class="specs">
+            <p><strong>SIZE:</strong> 150 x 190 x 380 (6")</p>
+            <p><strong>Weight:</strong> 13.5kg</p>
+          </div>
+        </div>
+        <div class="modal-image">
+          <img src="images\WhatsApp_Image_2025-02-25_at_11.51.05_a21e0b69-removebg-preview.png" alt="Interlocking Blocks (Hollow) - Image 2">
+          <div class="specs">
+            <p><strong>SIZE:</strong> 200 x 190 x 380 (9")</p>
+            <p><strong>Weight:</strong> 15kg</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Hollow Pot Modal -->
+  <div id="modal-hollow-pot" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <h2>Hollow Pot</h2>
+      <div class="modal-images">
+        <div class="modal-image">
+          <img src="images/2k-removebg-preview.png" alt="Hollow Pot - Image 1">
+          <div class="specs">
+            <p><strong>SIZE:</strong> 150 x 190 x 380</p>
+            <p><strong>Weight:</strong> 12.5kg</p>
+          </div>
+        </div>
+        <div class="modal-image">
+          <img src="images/1k-removebg-preview.png" alt="Hollow Pot - Image 2">
+          <div class="specs">
+            <p><strong>SIZE:</strong> 200 x 190 x 380</p>
+            <p><strong>Weight:</strong> 15kg</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Kerbstone Modal -->
+  <div id="modal-kerbstone" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <h2>Kerbstone</h2>
+      <div class="modal-images">
+        <div class="modal-image">
+          <img src="images/pavementslab2.jpg" alt="Kerbstone - Image 1">
+          <div class="specs">
+            <p><strong>SIZE:</strong> 800 x 150 x 110</p>
+            <p><strong>Weight:</strong> 56kg</p>
+          </div>
+        </div>
+        <div class="modal-image">
+          <img src="https://i.pinimg.com/474x/1d/98/7e/1d987ead9e8d7ac55e8df7bd37257ce1.jpg" alt="Kerbstone - Image 2">
+          <div class="specs">
+            <p><strong>SIZE:</strong> 800 x 150 x 110</p>
+            <p><strong>Weight:</strong> 56kg</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Quad Modal -->
+  <div id="modal-quad" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <h2>Quad</h2>
+      <div class="modal-images">
+        <div class="modal-image">
+          <img src="images/d08e6ce20c5e29a1d906d9affe9a7349-removebg-preview.png" alt="Quad - Image 1">
+          <div class="specs">
+            <p><strong>Size:</strong>200 x 100 x 60 mm</p>
+            <p><strong>Weight per square metre:</strong> 140kg</p>
+          </div>
+        </div>
+        <div class="modal-image">
+          <img src="https://i.pinimg.com/474x/fa/94/8d/fa948d5890753da18511ff4ee5151dd1.jpg" alt="Quad - Image 2">
+          <div class="specs">
+            <p><strong>SIZE:</strong> 200 x 100 x 80 mm</p>
+            <p><strong>Weight per square metre:</strong> 180kg</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Camel Foot Modal -->
+  <div id="modal-camel-foot" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <h2>Camel Foot</h2>
+      <div class="modal-images">
+        <div class="modal-image">
+          <img src="images/IMG20250225113143-removebg-preview.png" alt="Camel Foot - Image 1">
+          <div class="specs">
+            <p><strong>SIZE:</strong> 181 x 160 x 60</p>
+            <p><strong>Weight per m/2:</strong> 129kg</p>
+          </div>
+        </div>
+        <div class="modal-image">
+          <img src="images/IMG20250225113000-removebg-preview (1).png" alt="Camel Foot - Image 2">
+          <div class="specs">
+            <p><strong>SIZE:</strong>181 x 160 x 80</p>
+            <p><strong>Weight per m/2:</strong> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Lovestone Modal -->
+  <div id="modal-lovestone" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <h2>Lovestone</h2>
+      <div class="modal-images">
+        <div class="modal-image">
+          <img src="images/photo_5904646207781850801_w-removebg-preview.png" alt="Lovestone - Image 1">
+          <div class="specs">
+            <p><strong>Size:</strong> 200 x 150  x 60 </p>
+            <p><strong>Weight per m/2:</strong> 127kg</p>
+          </div>
+        </div>
+        <div class="modal-image">
+          <img src="images/1b-removebg-preview.png" alt="Lovestone - Image 2">
+          <div class="specs">
+            <p><strong>SIZE:</strong> 200 x 150 x 80</p>
+            <p><strong>Weight per m/2:</strong> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Uni Modal -->
+  <div id="modal-uni" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <h2>Uni</h2>
+      <div class="modal-images">
+        <div class="modal-image">
+          <img src="images/991.jpeg" alt="Uni - Image 1">
+          <div class="specs">
+            <p><strong>Size:</strong> 200 x 110 x60</p>
+            <p><strong>Weight per m/2:</strong> 110kg</p>
+          </div>
+        </div>
+        <div class="modal-image">
+          <img src="images/uni-removebg-preview.png" alt="Uni - Image 2">
+          <div class="specs">
+            <p><strong>SIZE:</strong> 200 x 110 x 60</p>
+            <p><strong>Weight per m/2:</strong> 110kg</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. Uni-colored Modal -->
+  <div id="modal-uni-colored" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <h2>Uni-colored</h2>
+      <div class="modal-images">
+        <div class="modal-image">
+          <img src="data:image/jpeg;base64,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" alt="Uni-colored - Image 1">
+          <div class="specs">
+            <p><strong>Size:</strong> 200 x 110 x 60</p>
+            <p><strong>Weight per m/2:</strong> 110kg</p>
+          </div>
+        </div>
+        <div class="modal-image">
+          <img src="data:image/jpeg;base64,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" alt="Uni-colored - Image 2">
+          <div class="specs">
+            <p><strong>Size:</strong>200 x 110 x 60</p>
+            <p><strong>Weight per m/2:</strong> 110kg</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. Channels Modal -->
+  <div id="modal-channels" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <h2>Channels</h2>
+      <div class="modal-images">
+        <div class="modal-image">
+          <img src="images/chanels111.png" alt="Channels - Image 1">
+          <div class="specs">
+            <p><strong>Size:</strong> Drain Channel (Dimensions: 800 x 130 x 100)</p>
+            <p><strong>Weight:</strong> 24kg</p>
+          </div>
+        </div>
+        <div class="modal-image">
+          <img src="images/channels-removebg-preview.png" alt="Channels - Image 2">
+          <div class="specs">
+            <p><strong>Size:</strong> Drain Channel (Dimensions: 800 x 130 x 100)</p>
+            <p><strong>Weight:</strong> 24kg</p>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="#">Concrete Blocks</a></li>
+          <li><a href="#">Concrete Precast</a></li>
+          <li><a href="#">Paving Blocks</a></li>
+          <li><a href="#">Floor Well</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2025 Bektas Blocks. Developed by Keith Kili.</p>
+    </div>
+  </footer>
+</body>
+</html>

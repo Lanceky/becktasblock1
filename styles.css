@@ -1,0 +1,640 @@
+/* ====================================================
+   RESET & GLOBAL STYLES
+==================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.col-md-4 {
+  height: 300px;
+  overflow: hidden;
+}
+
+.col-md-4 img.tes__icon {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.container.quote-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-info {
+  padding: 20px;
+  text-align: center;
+  border: 1px solid blue;
+  font-family: "Times New Roman";
+
+}
+
+.quote-info h3 {
+  font-size: 18.72px;
+  line-height: normal;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-family: "Times New Roman";
+}
+
+.quote-info p {
+  font-size: 20px;
+  line-height: normal;
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-family: "Times New Roman";
+}
+
+.quote-info .social {
+  display: block;
+  gap: normal;
+}
+
+.quote-info .social a {
+  color: rgb(184, 0, 240);
+  text-decoration: none;
+}
+
+
+.col-md-4 {
+  height: 300px;
+  overflow: hidden;
+}
+
+.col-md-4 img.tes__icon {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.container.quote-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-info {
+  padding: 20px;
+  text-align: center;
+  border: 1px solid blue;
+  font-family: "Times New Roman";
+}
+
+.quote-info h3 {
+  font-size: 18.72px;
+  line-height: normal;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-family: "Times New Roman";
+}
+
+.quote-info p {
+  font-size: 20px;
+  line-height: normal;
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-family: "Times New Roman";
+}
+
+.quote-info .social {
+  display: block;
+  gap: normal;
+}
+
+.quote-info .social a {
+  color: rgb(165, 24, 177);
+  text-decoration: none;
+}
+
+
+.top-bar,
+.site-header,
+.stats-bar,
+.clients-says,
+.request-quote,
+.site-footer {
+  background-color: transparent;
+}
+
+/* ====================================================
+ CONTAINER
+==================================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ====================================================
+ TOP BAR
+==================================================== */
+.top-bar {
+  background: #1a9a9857;
+  padding: 5px 0;
+  font-size: 20px;
+}
+
+.top-bar .container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.top-bar .contact-info span {
+  margin-left: 20px;
+  color: #555;
+}
+
+/* ====================================================
+ HEADER & NAVIGATION
+==================================================== */
+.site-header {
+  background: #ecf0f0;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  position: relative;
+  left:50%;
+}
+
+.site-nav li {
+  margin-left: 20px;
+}
+
+.site-nav a {
+  color: #f20707;
+  text-decoration: none;
+  font-weight: 800;
+  transition: color 0.3s;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: #f06400;
+}
+
+.site-nav a.search {
+  font-size: 18px;
+}
+
+/* ====================================================
+ STATS BAR
+==================================================== */
+.stats-bar {
+  background: #222;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.stat .number {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.stat .label {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ====================================================
+ DYNAMIC IMAGE SECTION
+==================================================== */
+/* Updated Dynamic Background: now fixed with viewport units to cover entire width */
+.dynamic-bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  transition: opacity 1s ease-in-out;
+  z-index: -1; /* Ensures it stays behind all other content */
+  
+}
+
+.dynamic-bg-image.hidden {
+  opacity: 0;
+}
+
+/* ====================================================
+ FEATURED PRODUCTS SECTION
+==================================================== */
+.featured-products {
+  padding: 60px 0;
+  text-align: center;
+  background-color: hsla(300, 11%, 93%, 0.993);
+}
+
+.featured-products h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: rgb(144, 10, 0);
+  font-family: inherit;
+}
+
+.featured-products h2 .featured-products-span {
+  font-size: 45px;
+  font-weight: 700;
+  color: rgb(252, 64, 54);
+  background-color: rgb(162, 59, 155);
+}
+
+.featured-products .subheading {
+  font-size: 26px;
+  font-weight: 400;
+  color: rgb(12, 2, 2);
+  line-height: 22px;
+  margin-bottom: 40px;
+}
+
+.products-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+
+.product-card {
+  background: #3e1745;
+  padding: 4px;
+  width: 500px;
+  border-radius: 4px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  background-color: #89b8c6;
+
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  flex-grow: 3;
+  margin-bottom: 15px;
+  width:210px;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.small-section-img {
+  width: 100%;
+  height: 250px; /* Increased height */
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.product-card > div {
+  font-size: 34px;
+  font-weight: 400;
+  color: rgb(104, 7, 108);
+  line-height: 22px;
+  border-color:5px solid green;
+}
+
+.product-card h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: rgb(81, 23, 99);
+  line-height: 22px;
+}
+
+.product-card > a {
+  font-size: 200px;
+  font-weight: 700;
+  color: rgb(84, 7, 143);
+  line-height: 22px;
+}
+
+.product-card .btn {
+  font-size: 30px;
+  font-weight: 700;
+  color: rgb(254, 254, 254);
+  padding: 8px 16px;
+  background: #822e72;
+  text-decoration: none;
+  border-radius: 0px;
+}
+
+.product-card .btn:hover {
+  background: #ed9004;
+}
+
+/* ====================================================
+ CLIENTS SAYS / TESTIMONIALS SECTION
+==================================================== */
+/* Container for the images */
+.image-container {
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow images to wrap to the next line */
+  margin: 0; /* Remove the negative margin */
+}
+
+/* Image parent */
+.image-container [class*="col-md"] {
+  flex: 0 0 33.333%; /* Make each image parent take up 33.333% of the row */
+  max-width: 33.333%; /* Make each image parent take up 33.333% of the row */
+  padding: 0 15px; /* Add padding to the left and right */
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+.col-md-4{
+  /* border: 1px solid red; */
+  /* display: flex; */
+}
+/* Individual images */
+.tes__icon {
+  width: 50%; /* Make the images fill the width of their parent*/
+  height: 50%; /* Maintain aspect ratio */
+  /* object-fit: cover; Cover the entire area, cropping if necessary */
+  /* margin-bottom: 0px; Remove the bottom margin */
+  /* border: 1px solid green; */
+}
+
+/* ====================================================
+ REQUEST A QUOTE SECTION
+==================================================== */
+.request-quote {
+  padding: 50px 0;
+  background: #b8bab6;
+}
+
+.quote-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.quote-form,
+.quote-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.quote-form h2,
+.quote-info h3 {
+  margin-bottom: 20px;
+}
+
+.quote-form form .form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.quote-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.quote-form input,
+.quote-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.quote-info p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.quote-info .social a {
+  color: #00f0dc;
+  text-decoration: none;
+  font-size: 28px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.quote-info .social a i {
+  margin-right: 5px;
+}
+
+/* ====================================================
+ FOOTER
+==================================================== */
+.site-footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.footer-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.footer-nav a {
+  color: #fdb707;
+  text-decoration: none;
+  font-size: 28px;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+  color: #00e0f0;
+}
+
+/* ====================================================
+ GENERAL IMAGE HOVER EFFECT
+==================================================== */
+img:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+.stats-bar {
+  background-color: rgb(34, 34, 34); /* Dark gray background */
+}
+
+.stats-bar .number,
+.stats-bar .label {
+  color: #06b4e0; /* White text color */
+}
+
+img.dynamic-bg-image.ai-style-change-1 {
+  transform: none;
+}
+
+.testimonial-slider-section {
+  width: 100%;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.testimonial-slider-container {
+  display: ruby-text-container;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Snap to each testimonial */
+  gap: 20px;
+}
+
+.testimonial {
+  min-width: 100%; /* Each testimonial takes full width */
+  scroll-snap-align: start; /* Snap to the start of each testimonial */
+  padding: 2px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Optional: Add some styling for the scrollbar */
+.testimonial-slider-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.testimonial-slider-container::-webkit-scrollbar-thumb {
+  background-color: #ef1eb0;
+  border-radius: 4px;
+}
+
+.col-md-4 {
+  height: 300px;
+  overflow: hidden;
+}
+
+.col-md-4 img.tes__icon {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.container.quote-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-info {
+  padding: 20px;
+  text-align: center;
+  border: 1px solid blue;
+  font-family: "Times New Roman";
+}
+
+.quote-info h3 {
+  font-size: 18.72px;
+  line-height: normal;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-family: "Times New Roman";
+}
+
+.quote-info p {
+  font-size: 20px;
+  line-height: normal;
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-family: "Times New Roman";
+}
+
+.quote-info .social {
+  display: block;
+  gap: normal;
+}
+
+.quote-info .social a {
+  color: rgb(240, 165, 0);
+  text-decoration: none;
+}
+
+/* ====================================================
+ ORIGINAL PRODUCTS SECTION (Background)
+==================================================== */
+
+
+section#our-products.section.products-categories {
+  /* Changed from absolute to relative positioning to better integrate with the flow */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  margin-top: 0;
+}
+
+section#our-products .container h2 {
+  /* Adjusted header styling for better responsiveness */
+  font-size: 45px;
+  color: #430238;
+  margin-bottom: 40px;
+  position:relative;
+  margin-top: 0;
+  font-family: 'Times New Roman', Times, serif;
+  font-family:sans-serif
+}
+
+/* ====================================================
+ UPDATED PRODUCT DETAILS SECTION & PRODUCT CARD STYLES
+==================================================== */
+/* Remove fixed height and grid margins so that multiple product cards fit responsively */
+/* Updated Product Details Container Grid */
+
+/* Adjusted Product Card Styling */
+
+/* Optional: Adjust the product card heading and text for smaller presentation */
+.product-card h3 {
+  font-size: 18px;         /* Slightly smaller heading */
+  margin-bottom: 10px;
+}
+
+.product-card p {
+  font-size: 14px;         /* Smaller text size for descriptions */
+  margin-bottom: 10px;
+}
+
+/* Adjusted Product Gallery Images in THE PRODUCT SECTION */
+
+  
+  .col-md-12{ background: #3e1745;
+    padding: 4px;
+    width: 500px;
+    border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(176, 126, 0, 0.92);
+
+  }
+  

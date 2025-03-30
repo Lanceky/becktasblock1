@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bektas Blocks | Products</title>
+  <meta name="description" content="Explore our range of concrete blocks and related products." />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" 
+    integrity="sha512-Fo3rlrZj/k7ujTnHg4C+6I6b4z8n7/YX9/E6R9vUVuE0Q2Lch7RjKXNtC9f+YbUXM7yT+g4n+ef+W4ePyZAlFw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Lightbox2 CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" 
+    integrity="sha512-t/5X+AdyUcZS0+8+7cfpN1ebjRLLwTvkbiKQmzrK4x16o6+EorMofwGfMclb2gC1Z/UTR6df5Yl5aI2DglZL2w==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    h1 {
+      justify-content:center;
+      color: #7d007b;
+      font-size: 45px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      left:35%;
+    }
+   
+    /* Image Grid for Products */
+    .image-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 90px;
+      max-width: 1500px;
+      margin: 20px;
+      padding: 20px;
+    }
+    .image-container .item {
+      position: relative;
+    }
+    .image-container .item img {
+      width: 130%;
+      height: 100%;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      object-fit: cover; /* Ensure the entire image is visible */
+    }
+    .image-container .item img:hover {
+      transform: scale(1.05);
+    }
+    .image-container .item p {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 1rem;
+    }
+    /* Responsive Navigation */
+    @media (max-width: 868px) {
+      nav.site-nav ul {
+        justify-content: center;
+      }
+    }
+    /* ===================== Responsive CSS Inserted ===================== */
+@media (max-width: 768px) {
+  /* Header adjustments */
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  .header-container img {
+    position: static !important;
+    margin: 10px 0;
+  }
+  .header-container h1 {
+    position: static;
+    text-align: center;
+    font-size: 2em;
+    margin: 10px 0;
+  }
+  /* Navigation adjustments */
+  .site-nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  .site-nav ul li {
+    margin: 5px 0;
+  }
+  /* Stats Bar adjustments */
+  .stats-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .stats-container .stat {
+    margin: 10px 0;
+  }
+  /* Professional Details: Stack cards vertically */
+  .professional-details .details-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .professional-details .card {
+    margin: 10px 0;
+    width: 90%;
+  }
+  /* Vision & Mission: Stack columns */
+  .vision-mission .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .vision, .mission {
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+  }
+  /* Latest News: Stack blog posts vertically */
+  section[style*="padding: 20px; background-color: #f9f9f9;"] > div[style*="display: flex"] {
+    flex-direction: column;
+    align-items: center;
+  }
+  /* Client Boxes: Adjust layout */
+  #client-boxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .client-box {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+  /* Request a Quote: Stack form and info vertically */
+  .quote-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .quote-form, .quote-info {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  /* Footer: Center text */
+  .site-footer .container {
+    text-align: center;
+    padding: 20px;
+  }
+}
+/* ===================== End Responsive CSS ===================== */
+
+    
+  </style>
+</head>
+<body>
+  <!-- Top Bar with Contact Info -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="contact-info">
+        <span class="phone">0704030882 or 0713900030</span>
+        <span class="email">bektasblocks@gmail.com</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header: Logo and Navigation -->
+  <header class="site-header">
+    <div class="container header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 50px;">
+      <!-- Left: Turkey Flag -->
+      <img src="images/kenyan.png" alt="Turkey Flag" style="width: 100px; height: auto; position: absolute; left: 10px;">
+      
+      <!-- Center: Logo and Title -->
+      <div style="display: flex; align-items: center; gap: 3px;">
+        <img src="images/1c50f433-3729-44ea-89d7-d629d281f4a7.jpg" alt="Bektas Blocks Logo" style="width: 250px; position:relative; left : 37%; height: 130px; border-radius: 5px;">
+        <h1 style="font-size: 3em;   position :relative; left: 38%; color:  #0965f0;">BEKTAS BLOCKS</h1>
+      </div>
+      
+      <!-- Right: Kenyan Flag -->
+      <img src="images/turkish.jpeg" alt="Kenyan Flag" style="width: 100px; height: auto; position: absolute; right: 10px;"> ">
+    </div>
+    <nav class="site-nav">
+      <ul>
+          <li><a href="index.html" class="active">HOME</a></li>
+          <li><a href="products.html">PRODUCTS</a></li>
+          <li><a href="projects.html">PROJECTS</a></li>
+          <li><a href="contacts.html">CONTACT</a></li>
+          <li><a href="reviews.html">REVIEWS</a></li>
+          <li><a href="staff.html">ABOUT US</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Stats Bar -->
+<section class="stats-bar">
+  <div class="container stats-container">
+    <div class="stat">
+      <span class="number">587</span>
+      <span class="label">CLIENTS</span>
+    </div>
+    <div class="stat">
+      <span class="number">30</span>
+      <span class="label">EMPLOYEES</span>
+    </div>
+    <div class="stat">
+      <span class="number">2</span>
+      <span class="label">AWARDS</span>
+    </div>
+    <div class="stat">
+      <span class="number">20</span>
+      <span class="label">PRODUCTS</span>
+    </div>
+  </div>
+</section>
+
+<!-- Inline JavaScript to animate numbers -->
+<script>
+  // Function to animate a number from start to end over 'duration' milliseconds
+  function animateValue(obj, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      obj.innerText = Math.floor(progress * (end - start) + start);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+
+  // Once the window loads, animate each stat number from 0 to its final value
+  window.addEventListener('load', () => {
+    const numbers = document.querySelectorAll('.stat .number');
+    numbers.forEach((numElement) => {
+      const finalValue = parseInt(numElement.innerText, 10);
+      animateValue(numElement, 0, finalValue, 2000); // Animate over 2000ms
+    });
+  });
+</script>
+
+  <section class="static-bg-section">
+    <style>
+      .static-bg-section {
+        background-image: url(images/Corn-Based-Concrete-Building-the-Future-of-Low-Carbon-Construction-Materials.jpg); /* Replace with your image path */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: white; /* Adjust text color as needed */
+        text-align: center;
+        padding: 100px 20px; /* Adjust padding as needed */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+  
+      .static-bg-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Adjust overlay color and opacity */
+        z-index: -1;
+      }
+  
+      .static-bg-content {
+        max-width: 800px; /* Adjust max-width as needed */
+        width: 100%;
+        padding: 20px;
+      }
+  
+      .static-bg-content h2 {
+        font-size: 2.5rem; /* Adjust font size as needed */
+        margin-bottom: 20px;
+      }
+  
+      .static-bg-content p {
+        font-size: 1.1rem; /* Adjust font size as needed */
+        line-height: 1.6;
+      }
+  
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .static-bg-content h2 {
+          font-size: 2rem;
+        }
+        .static-bg-content p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+    <div class="static-bg-content">
+      <h2>Welcome to Bektas products</h2>
+      <p>Discover quality concrete and precast building materials for your projects.</p>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <!-- Stats Bar -->
+
+  <!-- PRODUCTS SECTION -->
+  <section id="our-products" class="section products-categories">
+    <div class="container">
+      <h2>CHOOSE FROM THE VARIETIES</h2>
+      <div class="categories-grid">
+        <!-- Category: Concrete Blocks -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT DETAILS SECTION – Image Grid -->
+  <section id="product-details" class="section product-details">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 20px;"></h2>
+      <div class="image-container">
+        <div class="item">
+          <a href="productgallery.html">
+            <img src="images/concreteblocksolid.jpg" alt="Hollow Pot">
+          </a>
+          <p> Interlocking solid concrete blocks</p>
+        </div>
+        <div class="item">
+          <a href="productgallery.html">
+            <img src="https://i.pinimg.com/474x/46/02/fb/4602fb48129167bc380a68c1958dbd8c.jpg" alt="Interlocking Blocks (Hollow)">
+          </a>
+          <p>Interlocking Blocks (Hollow)</p>
+        </div>
+        <div class="item">
+          <a href="productgallery.html">
+            <img src="images/2k-removebg-preview.png" alt="Concrete Blocks">
+          </a>
+          <p>Hollow pot </p>
+        </div>
+        <div class="item">
+          <a href="productgallery.html">
+            <img src="images/pavementslab2.jpg" alt="Kerbstone">
+          </a>
+          <p>Kerbstone</p>
+        </div>
+        <div class="item">
+          <a href="productgallery.html">
+            <img src="images/quad2.jpg" alt="Quad">
+          </a>
+          <p>Quad</p>
+        </div>
+        <div class="item">
+          <a href="productgallery.html">
+            <img src="images/camelffotstone1.jpg" alt="Camel Foot">
+          </a>
+          <p>Camel Foot</p>
+        </div>
+        <div class="item">
+          <a href="productgallery.html">
+            <img src="images/lovestone1.jpg" alt="Lovestone">
+          </a>
+          <p>Lovestone</p>
+        </div>
+        <div class="item">
+          <a href="productgallery.html">
+            <img src="images/lovestone2.jpg" alt="Uni">
+          </a>
+          <p>Uni</p>
+        </div>
+        <div class="item">
+          <a href="productgallery.html">
+            <img src="images/Double-S-UNI-470x335.png" alt="Kerbstone">
+          </a>
+          <p>Uni-colored</p>
+        </div>
+        <div class="item">
+          <a href="productgallery.html">
+            <img src="images/channels222.jpeg" alt="Kerbstone">
+          </a>
+          <p>Channels</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REQUEST A QUOTE SECTION -->
+  <section class="request-quote">
+    <div class="container quote-container">
+      <div class="quote-form">
+        <h2>REQUEST A QUOTE</h2>
+        <form id="quoteForm">
+          <div class="form-group">
+            <label for="qName">Name</label>
+            <input type="text" id="qName" name="qName" required />
+          </div>
+          <div class="form-group">
+            <label for="qEmail">Email</label>
+            <input type="email" id="qEmail" name="qEmail" required />
+          </div>
+          <div class="form-group">
+            <label for="qPhone">Phone</label>
+            <input type="tel" id="qPhone" name="qPhone" required />
+          </div>
+          <div class="form-group">
+            <label for="qSubject">Subject</label>
+            <input type="text" id="qSubject" name="qSubject" required />
+          </div>
+          <div class="form-group">
+            <label for="qMessage">Message</label>
+            <textarea id="qMessage" name="qMessage" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn">SEND MESSAGE</button>
+        </form>
+      </div>
+      <div class="quote-info">
+        <h3>Contact Details</h3>
+        <p>
+          P.O. BOX 81238-80100,<br>
+          Baharini, Eldoret.
+        </p>
+        <p><strong>Phone:</strong> 0704030881</p>
+        <p><strong>Alternate:</strong> 0713900030</p>
+        <div class="social">
+          <a href="https://www.facebook.com/people/Bektas-Blocks-LTD/61558517308412/" target="_blank"><i class="fab fa-facebook"></i> FACEBOOK</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="products.html">Concrete Blocks</a></li>
+          <li><a href="products.html">Paving Blocks</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2025 Bektas Blocks. Developed by Keith Kili.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+  <!-- Lightbox2 JavaScript -->
+  <script src="script.js"
+    integrity="sha512-BPz41T2ifN2ZQGl5uK13jwC5p+vLq8xkBTLI6L1o6lp8ZMyRzVvTCtMc79V6FDrTQ//6z5T+ArBqkAgBMoe+DQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
